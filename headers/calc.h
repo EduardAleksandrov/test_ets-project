@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <vector>
 #include "pik.h"
 #include "temp.h"
 
@@ -11,6 +12,10 @@ class Calc
 public:
     Calc();
     Calc(std::string pik, std::string temp);
+
+    void get_temperature(std::string temp, int& error);
+
+    std::vector<DataTemp> data_temp;
 };
 
 #endif

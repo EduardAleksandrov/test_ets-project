@@ -6,6 +6,7 @@
 struct DataTemp {
     std::tm datetime;
     double temperature;
+    DataTemp(std::tm d, double t): datetime{d}, temperature(t){}
 };
 
 #endif
