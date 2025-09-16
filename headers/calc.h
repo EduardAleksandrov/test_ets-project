@@ -16,6 +16,8 @@ public:
     void get_temperature(std::string temp, int& error);
     void get_pik(std::string pik, int& error);
 
+    bool check_pik_time(std::string dateStr, int& error);
+
     std::vector<DataTemp> data_temp;
     std::vector<DataPik> data_pik;
 };
