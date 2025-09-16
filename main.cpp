@@ -9,8 +9,8 @@ int main()
 
     Calc calc(pik, temp);
 
-    // for(int i = 0; i<calc.data_temp.size(); i++)
-    //     std::cout<<calc.data_temp[i].datetime.tm_hour << "\n";
+    // for(int i = 0; i<calc.data_pik.size(); i++)
+    //     std::cout<<calc.data_pik[i].date.tm_mday << "\n";
 
     return 0;
 }
