@@ -2,6 +2,8 @@
 #include <boost/test/unit_test.hpp>
 #include "../headers/calc.h"
 
+BOOST_AUTO_TEST_SUITE(TestSuite_One)
+
 BOOST_AUTO_TEST_CASE(test_case_1)
 {
     // Arrange
@@ -35,3 +37,5 @@ BOOST_AUTO_TEST_CASE(test_case_2)
     // Assert
     BOOST_TEST(result == 1);
 }
+
+BOOST_AUTO_TEST_SUITE_END()
