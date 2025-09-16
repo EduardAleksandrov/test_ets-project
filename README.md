@@ -9,25 +9,21 @@
 
 ## Установка и запуск программы
 
-1) Создаем папку ```build``` в корне проекта
+1) При первом запуске запускаем команду ```make dir``` для создания папок build
 
 2) Запускаем проект: ```make run```
 
-## Установка и запуск тестов "Boost test":
+## Установка и запуск тестов "Boost test"
 
 1) Переходим в папку tests
 
-2) Создаем папку build-conan в папке tests
-
-3) Запускаем через Python Conan venv
+2) Запускаем через Python Conan venv
     
     ```$conan install /home/eduard/Projects/iu7/TESTS_v1/lab1/conanfile.txt -of /home/eduard/Projects/iu7/TESTS_v1/lab1/build-conan --build=missing```
 
     Поменяйте пути выше
 
-4) Добавляем папку build в папку tests: ```mkdir build```
-
-5) Запустить тесты находясь в папке tests: 
+4) Запустить тесты находясь в папке tests: 
 
     ```./load.sh all```
 
