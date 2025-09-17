@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ctime>
 #include <vector>
+#include <memory>
 #include "pik.h"
 #include "temp.h"
 
@@ -20,6 +21,9 @@ public:
 
     std::vector<DataTemp> data_temp;
     std::vector<DataPik> data_pik;
+
+    std::vector<std::unique_ptr<DataTemp>> data_temp_h;
+    std::vector<std::unique_ptr<DataPik>> data_pik_h;
 };
 
 #endif
