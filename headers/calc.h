@@ -19,6 +19,7 @@ public:
     void get_pik(std::string pik, int& error);
 
     bool check_pik_time(std::string dateStr);
+    int predict_peak_hour(double targetTemperature); // регрессионная модель
 
 private:
     std::vector<DataTemp> data_temp;

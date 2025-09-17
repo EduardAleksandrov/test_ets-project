@@ -7,6 +7,8 @@
 #include <iomanip>
 #include <ctime>
 #include <set>
+#include <map>
+#include <algorithm>
 
 Calc::Calc(){}
 
@@ -222,4 +224,21 @@ bool Calc::check_pik_time(std::string dateStr)
 
     if(first_value <= datetime.tm_hour && datetime.tm_hour <= last_value) return true;
     else return false;
+}
+
+int Calc::predict_peak_hour(double targetTemperature) {
+    std::map<int, int> hourCount; // Часы и количество пиковых нагрузок
+
+    for (const auto& data : data_temp) {
+        if (data.temperature >= targetTemperature - 1 && data.temperature <= targetTemperature + 1) {
+            int hour = data.datetime.tm_hour; // Получаем час
+            hourCount[hour]++;
+        }
+    }
+
+    if(hourCount.empty()) throw Pexception("Dictionary is empty");
+    
+    // Находим час с максимальным количеством, firrst получаем ключ из словаря
+    return std::max_element(hourCount.begin(), hourCount.end(),
+                             [](const auto& a, const auto& b) { return a.second < b.second; })->first;
 }

@@ -52,7 +52,8 @@ include_directories(${Boost_INCLUDE_DIRS})
 # Specify the source files you want to copy
 set(SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/../task/mo_pik.csv
-    ${CMAKE_SOURCE_DIR}/../task/mo_temp.csv)
+    ${CMAKE_SOURCE_DIR}/../task/mo_temp.csv
+    ${CMAKE_SOURCE_DIR}/../testdata/1.test.csv)
 
 # Specify the destination directory (e.g., the path folder in the build directory)
 set(DESTINATION_DIR ${CMAKE_CURRENT_BINARY_DIR}/task)

@@ -48,4 +48,15 @@ BOOST_AUTO_TEST_CASE(test_case_3_throw)
     BOOST_CHECK_THROW(calc.check_pik_time("2017-01-11 :00:00.000"), Pexception);
 }
 
+BOOST_AUTO_TEST_CASE(test_case_4_throw)
+{
+    // Arrange
+    std::string pik = "./task/mo_pik.csv";
+    std::string temp = "./testdata/1.test.csv";
+    Calc calc(pik, temp);
+    
+    // Act // Assert
+    BOOST_CHECK_THROW(calc.predict_peak_hour(9), Pexception);
+}
+
 BOOST_AUTO_TEST_SUITE_END()
