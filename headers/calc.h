@@ -19,6 +19,7 @@ public:
 
     bool check_pik_time(std::string dateStr, int& error);
 
+private:
     std::vector<DataTemp> data_temp;
     std::vector<DataPik> data_pik;
 
