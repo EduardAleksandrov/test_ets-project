@@ -219,7 +219,7 @@ bool Calc::check_pik_time(std::string dateStr)
         else {
             first_value = *it; // Last element
         }
-        std::cout << "The selected value is: " << first_value << " " << last_value << std::endl;
+        // std::cout << "The selected value is: " << first_value << " " << last_value << std::endl;
     }
 
     if(first_value <= datetime.tm_hour && datetime.tm_hour <= last_value) return true;
@@ -237,7 +237,7 @@ int Calc::predict_peak_hour(double targetTemperature) {
     }
 
     if(hourCount.empty()) throw Pexception("Dictionary is empty");
-    
+
     // Находим час с максимальным количеством, firrst получаем ключ из словаря
     return std::max_element(hourCount.begin(), hourCount.end(),
                              [](const auto& a, const auto& b) { return a.second < b.second; })->first;

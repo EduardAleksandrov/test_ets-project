@@ -15,8 +15,15 @@ int main()
 
     try
     {
-        bool result = calc.check_pik_time("2017-01-11 18:00:00.000");
-        std::cout << "Проверка пикового времени: " << result << std::endl;
+        // Вводим дату
+        std::string time{"2017-01-11 18:00:00.000"};
+        bool result = calc.check_pik_time(time);
+
+        std::string result_cout;
+        if(result == 1) result_cout = "Верно";
+        else result_cout = "Неверно";
+
+        std::cout << "Проверка пикового времени: " << result_cout << std::endl;
     }
     catch (const Pexception& err)
     {
@@ -29,7 +36,9 @@ int main()
 
     try
     {
-        int predict_hour = calc.predict_peak_hour(9);
+        // Вводим температуру
+        double temperature_predict {10};
+        int predict_hour = calc.predict_peak_hour(temperature_predict);
         cout << "Прогноз часа нагрузки: " << predict_hour << endl;
     }
     catch (const Pexception& err)
