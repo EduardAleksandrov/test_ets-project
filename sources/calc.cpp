@@ -238,7 +238,7 @@ int Calc::predict_peak_hour(double targetTemperature) {
 
     if(hourCount.empty()) throw Pexception("Dictionary is empty");
 
-    // Находим час с максимальным количеством, firrst получаем ключ из словаря
+    // Находим час с максимальным количеством, first получаем ключ из словаря
     return std::max_element(hourCount.begin(), hourCount.end(),
                              [](const auto& a, const auto& b) { return a.second < b.second; })->first;
 }
