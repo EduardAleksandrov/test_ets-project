@@ -31,11 +31,21 @@ BOOST_AUTO_TEST_CASE(test_case_2)
     Calc calc(pik, temp);
     
     // Act
-    int error {0};
-    bool result = calc.check_pik_time("2017-01-11 18:00:00.000", error);
+    bool result = calc.check_pik_time("2017-01-11 18:00:00.000");
 
     // Assert
     BOOST_TEST(result == 1);
+}
+
+BOOST_AUTO_TEST_CASE(test_case_3_throw)
+{
+    // Arrange
+    std::string pik = "./task/mo_pik.csv";
+    std::string temp = "./task/mo_temp.csv";
+    Calc calc(pik, temp);
+    
+    // Act // Assert
+    BOOST_CHECK_THROW(calc.check_pik_time("2017-01-11 :00:00.000"), Pexception);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

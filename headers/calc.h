@@ -7,6 +7,7 @@
 #include <memory>
 #include "pik.h"
 #include "temp.h"
+#include "exept.h"
 
 class Calc
 {
@@ -17,7 +18,7 @@ public:
     void get_temperature(std::string temp, int& error);
     void get_pik(std::string pik, int& error);
 
-    bool check_pik_time(std::string dateStr, int& error);
+    bool check_pik_time(std::string dateStr);
 
 private:
     std::vector<DataTemp> data_temp;

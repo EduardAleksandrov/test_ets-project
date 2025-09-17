@@ -163,13 +163,12 @@ void Calc::get_pik(std::string filename, int& error)
     file.close(); // Close the file
 }
 
-bool Calc::check_pik_time(std::string dateStr, int& error)
+bool Calc::check_pik_time(std::string dateStr)
 {
     // Check for missing date
     if (dateStr.empty()) {
         std::cerr << "Missing date in line" << std::endl;
-        error = 1; // Set error code for missing date
-        return false;
+        throw Pexception("Missing date");
     }
 
     // Parse the date string into std::tm structure
@@ -180,8 +179,7 @@ bool Calc::check_pik_time(std::string dateStr, int& error)
     // Check if date parsing was successful
     if (dateStream.fail()) {
         std::cerr << "Wrong date format in line: " << std::endl;
-        error = 2; // Set error code for wrong date format
-        return false;
+        throw Pexception("Wrong date format");
     }
 
     // Pik range for day
